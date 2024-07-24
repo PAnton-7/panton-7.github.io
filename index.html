@@ -40,6 +40,14 @@
 
       but.addEventListener("click", tg.showScanQrPopup()
       );
+      import { initQRScanner } from '@telegram-apps/sdk';
+
+      const [qrScanner] = initQRScanner();
+      scanner.open('Scan QR code').then((content) => {
+      console.log(content);
+  // Output: 'some-data=22l&app=93...'
+      });
+      console.log(scanner.isOpened); // true
       web_app_open_scan_qr_popup;
    </script>
 </body>
