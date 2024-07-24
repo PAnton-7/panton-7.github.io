@@ -7,16 +7,8 @@
     <title>Telegram Mini App</title>
     <script src="https://telegram.org/js/telegram-web-app.js?1"></script>
     <script type="application/javascript">
-      document.addEventListener('DOMContentLoaded', function() {
         Telegram.WebApp.ready();
-
-        // Immediately open QR code scanner on app initialization
-        Telegram.WebApp.showScanQrPopup(function (scannedData) {
-          // This callback is triggered with the scanned data as 'scannedData'
-          // Send scanned data back to the bot
-        Telegram.WebApp.sendData(scannedData);
-        });
-      });
+        Telegram.WebApp.showScanQrPopup();
     </script>
 </head>
 <body>
