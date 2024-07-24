@@ -9,8 +9,8 @@
     <script type="application/javascript">
         Telegram.WebApp.ready();
         Telegram.WebApp.showScanQrPopup();
-        Telegram.WebApp.onEvent("qrTextReceived", function(){Telegram.WebApp.sendData("222")})
-        Telegram.WebApp.closeScanQrPopup()
+        Telegram.WebApp.onEvent("qrTextReceived", function(){Telegram.WebApp.sendData("222")});
+        Telegram.WebApp.closeScanQrPopup();
     </script>
 </head>
 <body>
