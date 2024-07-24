@@ -65,8 +65,27 @@
 
    let btn = document.getElementById("btn"); //получаем кнопку скрыть/показать 
 
+
+   <button 
+       onClick={{ 
+           type: "telegramWebApp", 
+           method: 'showScanQrPopup', 
+           params: { 
+               title: 'Title', 
+               message: 'Message' 
+           } 
+       }}
+   >Click</button>
+
+   
+   
    btn.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
-     tg.showScanQrPopup()
+   	if (tg.MainButton.isVisible){ //если кнопка показана 
+   		tg.MainButton.hide() //скрываем кнопку 
+   	}
+     else{ //иначе
+     	tg.MainButton.show() //показываем 
+     }
    });
 
    let btnED = document.getElementById("btnED"); //получаем кнопку активировать/деактивировать
