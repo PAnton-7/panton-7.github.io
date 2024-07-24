@@ -36,19 +36,24 @@
 
    <script>
       let tg = window.Telegram.WebApp;
+      tg.expand(); //расширяем на все окно  
       let but = document.getElementbyId("btn");
 
-      but.addEventListener("click", tg.showScanQrPopup()
-      );
-      import { initQRScanner } from '@telegram-apps/sdk';
-
-      const [qrScanner] = initQRScanner();
-      scanner.open('Scan QR code').then((content) => {
-      console.log(content);
-  // Output: 'some-data=22l&app=93...'
+      btn.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
+      	if (tg.MainButton.isVisible){ //если кнопка показана 
+      		tg.MainButton.hide() //скрываем кнопку 
+      	}
+        else{ //иначе
+        	tg.MainButton.show() //показываем 
+        }
       });
-      console.log(scanner.isOpened); // true
-      web_app_open_scan_qr_popup;
+
+      tg.MainButton.text = "Changed Text"; //изменяем текст кнопки 
+      tg.MainButton.setText("Changed Text1"); //изменяем текст кнопки иначе
+      tg.MainButton.textColor = "#F55353"; //изменяем цвет текста кнопки
+      tg.MainButton.color = "#143F6B"; //изменяем цвет бэкграунда кнопки
+      tg.MainButton.setParams({"color": "#143F6B"}); //так изменяются все параметры 
+   
    </script>
 </body>
 
