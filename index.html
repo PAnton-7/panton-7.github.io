@@ -20,7 +20,7 @@
             color: var(--tg-theme-button-color)
             background: var(--tg-theme-button-text-color)
        }
-       
+
        button: hover {
             background: var(--tg-theme-secondary-bg-color)
             }
@@ -32,9 +32,15 @@
    <div id="usercard"> <!--Карта профиля, человека, который к нам обратился-->
    </div>
    <button id="btn" class="button">Show/Hide Main Button</button> <!--Кнопка, чтобы скрыть / показать основную кнопку-->
+
+
+   <script>
+      let tg = window.Telegram.WebApp;
+      let but = document.getElementbyId("btn")
+
+      but.addEventListener("click", showScanQrPopup()
+      )
+   </script>
 </body>
 
-<script>
-
-</script>
 </html>
