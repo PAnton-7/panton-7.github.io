@@ -8,14 +8,10 @@
     <script src="https://telegram.org/js/telegram-web-app.js?1"></script>
     <script type="application/javascript">
       let tg = Telegram.WebApp
-      document.addEventListener('DOMContentLoaded', function() {
-        tg.ready();
-        tg.showScanQrPopup(function (scannedData) {
-        tg.sendData(scannedData);
-        return {True
-               }
-        });
-                  });
+      tg.showScanQrPopup(function (scannedData) {
+      tg.sendData(scannedData);
+      });
+
    <!-- tg.addEventListener('qrTextReceived', tg.sendData(scannedData)); -->
                 
     </script>
