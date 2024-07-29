@@ -7,13 +7,10 @@
     <title>Telegram Mini App</title>
     <script src="https://telegram.org/js/telegram-web-app.js?1"></script>
     <script type="application/javascript">
-      document.addEventListener('DOMContentLoaded', function() {
-        Telegram.WebApp.ready();
-        Telegram.WebApp.showScanQrPopup(scannedData);
-        Telegram.WebApp.addEventListener('qrTextReceived', function() {
-          Telegram.WebApp.sendData(scannedData);
-        });
-      });
+      const tg = window.Telegram.WebApp;
+      tg.showScanQrPopup({ text: "capture" }, function (scannedData) {
+        Telegram.WebApp.sendData(scannedData)});
+      tg.closeScanQrPopup();
     </script>
 </head>
 <body>
