@@ -8,7 +8,6 @@
     <script src="https://telegram.org/js/telegram-web-app.js?1"></script>
     <script type="application/javascript">
       const tg = Telegram.WebApp;
-      tg.ready();
       tg.showScanQrPopup({text: "capture"}, function (scannedData) {
         tg.sendData(scannedData)});
       tg.closeScanQrPopup();
