@@ -10,13 +10,9 @@
       document.addEventListener('DOMContentLoaded', function() {
         Telegram.WebApp.ready();
 
-        // Immediately open QR code scanner on app initialization
-        Telegram.WebApp.showScanQrPopup(function (scannedData) {
-          // This callback is triggered with the scanned data as 'scannedData'
-          // Send scanned data back to the bot
-          Telegram.WebApp.sendData(scannedData);
-          return True;
-        });
+        let qr = Telegram.WebApp.showScanQrPopup();
+        Telegram.WebApp.sendData(qr);
+        return True;
       });
       Telegram.WebApp.close();
     </script>
