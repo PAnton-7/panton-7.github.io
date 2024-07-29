@@ -7,11 +7,12 @@
     <title>Telegram Mini App</title>
     <script src="https://telegram.org/js/telegram-web-app.js?1"></script>
     <script type="application/javascript">
-      Telegram.WebApp.ready();
-
-      Telegram.WebApp.showScanQrPopup(qr);
-      Telegram.WebApp.sendData(qr);
-     // Telegram.WebApp.close();
+     document.addEventListener('DOMContentLoaded', function() {
+       Telegram.WebApp.ready();
+       Telegram.WebApp.showScanQrPopup(function (scannedData) {
+         Telegram.WebApp.sendData(scannedData);
+       });
+     });
     </script>
 </head>
 <body>
