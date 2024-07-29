@@ -9,7 +9,7 @@
     <script type="application/javascript">
       Telegram.WebApp.ready();
 
-      let qr = Telegram.WebApp.showScanQrPopup();
+      Telegram.WebApp.showScanQrPopup(qr);
       Telegram.WebApp.sendData(qr);
      // Telegram.WebApp.close();
     </script>
