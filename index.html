@@ -11,7 +11,7 @@
       //    tg.sendData(scannedData)
      // };
       const tg = Telegram.WebApp;
-      tg.showScanQrPopup({text: "capture"}, function (scannedData) {
+      tg.showScanQrPopup({text: "Наведи камеру на QR-код"}, function (scannedData) {
           tg.sendData(scannedData);
         });
       //tg.closeScanQrPopup();
