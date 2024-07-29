@@ -12,7 +12,7 @@
      // };
       const tg = Telegram.WebApp;
       tg.showScanQrPopup({text: "capture"}, function (scannedData) {
-          Telegram.WebApp.sendData(scannedData);
+          tg.sendData(scannedData);
         });
       //tg.closeScanQrPopup();
     </script>
