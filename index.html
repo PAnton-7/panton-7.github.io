@@ -10,10 +10,8 @@
       const tg = window.Telegram?.WebApp;
       tg.showScanQrPopup({text: "Наведи камеру на QR-код"}, function (scannedData) {
           tg.sendData(scannedData);
+          tg.HapticFeedback?.notificationOccurred("heavy");
         });
-      console.log('Кнопка нажата, вибрация сработала');
-      const haptic = window.Telegram?.WebApp?.HapticFeedback;
-      haptic?.notificationOccurred("heavy");
     </script>
 </head>
 <body>
