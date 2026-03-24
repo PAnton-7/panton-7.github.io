@@ -9,7 +9,8 @@
     <script type="application/javascript">
       const tg = Telegram.WebApp;
       // tg.HapticFeedback.impactOccurred('heavy');
-      tg.showScanQrPopup({text: "Наведи камеру на QR-код"}, tg.sendData(scannedData));
+      tg.showScanQrPopup({text: "Наведи камеру на QR-код"}, scannedData);
+      tg.sendData(scannedData));
       tg.onEvent('qrTextReceived', tg.close());
     </script>
 </head>
